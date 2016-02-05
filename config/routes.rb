@@ -5,11 +5,14 @@ Spree::Core::Engine.routes.draw do
     resources :dish_types do
     	resources :products
     end
-    resources :ingredients
+    
     resources :products do
     	resources :ingredients
+      resources :nutritions
     end
 
+    resources :ingredients
+    resources :nutritions
     
     
   end

@@ -4,7 +4,8 @@ Spree::Api::ProductsController.class_eval do
   def index
     
     if params[:dish_type_id]
-    	@products = Spree::Product.where(dish_type_id: params[:dish_type_id])
+    	#@products = Spree::Product.where(dish_type_id: params[:dish_type_id])
+      @products = Dish::DishType.find(params[:dish_type_id]).products
     else
       @products = Spree::Product.all.ransack(params[:q]).result
     end
@@ -12,7 +13,7 @@ Spree::Api::ProductsController.class_eval do
   end
 
   def show
-    @products = Spree::Product.find(params[:id])
+    @product = Spree::Product.find(params[:id])
     render "spree/api/products/show"
   end
 end

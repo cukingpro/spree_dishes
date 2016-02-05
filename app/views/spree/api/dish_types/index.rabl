@@ -1,6 +1,6 @@
 object false
 node(:count) { @dish_types.count }
 child(@dish_types => :dish_types) do
-  attributes :id, :name
+  extends "spree/api/dish_types/show"
 end
 
