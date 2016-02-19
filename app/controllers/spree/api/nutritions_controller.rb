@@ -5,12 +5,15 @@ module Spree
       before_action :authenticate_user, :except => [:index, :show]
       def index
         if params[:product_id]
-          @nutritions = Spree::Product.find(params[:product_id]).nutritions
+          @products_nutritions = Spree::Product.find(params[:product_id]).products_nutritions
+          # @nutritions = Spree::Product.find(params[:product_id]).nutritions
+          render "spree/api/nutritions/products_nutritions"
         else
           @nutritions = Dish::Nutrition.all
+          render "spree/api/nutritions/index"
         end
 
-        render "spree/api/nutritions/index"
+        
       end
 
       def show

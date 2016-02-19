@@ -6,7 +6,8 @@ attributes :id, :name, :dish_type_id, :description,  :dish_cooking_instructions
 node(:available_on){[]}
 node(:dish_price) {|p| p.cost_price}
 node(:dish_currency) {|p| p.cost_currency}
-node(:likes) { 0 }
+node(:likes) { |p| p.likes.count }
+node(:current_user_like){|p| p.current_user_like?(@user_id)}
 
 #child :date_deliveries => :date_deliveries do
  # node(:date) { |p| p.delivery_date }

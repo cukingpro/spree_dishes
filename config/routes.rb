@@ -7,7 +7,9 @@ Spree::Core::Engine.routes.draw do
     end
     
     resources :products do
-    	resources :ingredients
+    	# resources :ingredients, controller: 'product_ingredients' 
+     #  resources :nutritions, controller: 'product_nutritions'
+      resources :ingredients
       resources :nutritions
     end
 
