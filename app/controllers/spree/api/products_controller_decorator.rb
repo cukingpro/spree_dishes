@@ -18,9 +18,9 @@ Spree::Api::ProductsController.class_eval do
     @user_id = request.headers["X-Spree-Token"].present? ? current_api_user.id : nil;
     @product = Spree::Product.find(params[:id])
     p 1111111111111111111
-    p @products.likes
+    p @product.likes
     p 2222222222222222222
-    p @products.likes.count
+    p @product.likes.count
     p 111111111111111111111
     render "spree/api/products/show", status: 200
   end
