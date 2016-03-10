@@ -1,7 +1,7 @@
 object @product
 
 attributes :id, :name, :dish_type_id, :description,  :dish_cooking_instructions
-node(:available_on){|p| p.available_ons {|d| d.delivery_date}}
+node(:available_on){|p| p.available_ons.sort_by{|d| d.d["delivery_date"]}}
 node(:dish_price) {|p| p.cost_price}
 node(:dish_currency) {|p| p.cost_currency}
 node(:likes) { |p| p.likes.count }
