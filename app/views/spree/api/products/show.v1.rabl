@@ -10,4 +10,4 @@ node(:dish_type){ |p| p.dish_type.name if p.dish_type }
 child(:variant_images => :images) { extends "spree/api/images/show" }
 child(:ingredients => :ingredients) { extends "spree/api/ingredients/show" }
 child(:products_nutritions => :nutritions) { extends "spree/api/nutritions/products_nutritions" }
-child(:comments => :comments) { extends "spree/api/comments/show" }
+child(:approved_comments => :comments) { extends "spree/api/comments/show" }
