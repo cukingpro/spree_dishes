@@ -1,6 +1,6 @@
 module Spree
   module Api
-    class IngredientsController	< Spree::Api::BaseController
+    class IngredientsController < Spree::Api::BaseController
 
       before_action :authenticate_user, :except => [:index, :show]
       def index

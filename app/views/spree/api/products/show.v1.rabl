@@ -8,3 +8,6 @@ node(:likes) { |p| p.likes.count }
 node(:current_user_like){|p| p.current_user_like?(@user_id)}
 node(:dish_type){ |p| p.dish_type.name if p.dish_type }
 child(:variant_images => :images) { extends "spree/api/images/show" }
+child(:ingredients => :ingredients) { extends "spree/api/ingredients/show" }
+child(:nutritions => :nutritions) { extends "spree/api/nutritions/show" }
+child(:comments => :comments) { extends "spree/api/comments/show" }

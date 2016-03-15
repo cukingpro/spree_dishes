@@ -1,6 +1,6 @@
 module Spree
   module Api
-    class NutritionsController	< Spree::Api::BaseController
+    class NutritionsController  < Spree::Api::BaseController
 
       before_action :authenticate_user, :except => [:index, :show]
       def index
@@ -13,7 +13,7 @@ module Spree
           render "spree/api/nutritions/index"
         end
 
-        
+
       end
 
       def show
