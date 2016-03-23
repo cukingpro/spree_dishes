@@ -1,3 +1,5 @@
+#on the menu
+
 object @product
 
 attributes :id, :name

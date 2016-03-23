@@ -1,3 +1,5 @@
+#detail
+
 object @product
 
 attributes :id, :name, :dish_type_id, :description,  :dish_cooking_instructions

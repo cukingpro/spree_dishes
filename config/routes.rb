@@ -14,6 +14,7 @@ Spree::Core::Engine.routes.draw do
     end
     post "/products/search_by_name" => "/spree/api/products#search_by_name" 
     post "/products/products_on_date" => "/spree/api/products#products_on_date"
+    post "/products/products_in_days" => "/spree/api/products#products_in_days"
 
     resources :ingredients
     resources :nutritions
