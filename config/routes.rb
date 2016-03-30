@@ -18,7 +18,7 @@ Spree::Core::Engine.routes.draw do
 
     resources :ingredients
     resources :nutritions
-    
+    resources :suppliers
     
   end
 
