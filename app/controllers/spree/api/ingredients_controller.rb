@@ -2,7 +2,7 @@ module Spree
   module Api
     class IngredientsController < Spree::Api::BaseController
 
-      before_action :authenticate_user, :except => [:index, :show]
+      before_action :authenticate_user, :except => [:index, :show, :search_by_name]
       def index
         if params[:product_id]
           @ingredients = Spree::Product.find(params[:product_id]).ingredients
@@ -43,6 +43,11 @@ module Spree
 
         @status = [ { "messages" => "Delete Ingredient Successful"}]
         render "spree/api/logger/log", status: 204
+      end
+
+      def search_by_name
+        @ingredients = Dish::Ingredient.ransack(name_cont: params[:name]).result
+        render "spree/api/ingredients/index", status: 200
       end
 
       private
