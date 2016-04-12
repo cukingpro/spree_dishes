@@ -20,7 +20,7 @@ Spree::Core::Engine.routes.draw do
     post "/ingredients/search_by_name" => "/spree/api/ingredients#search_by_name"
     resources :nutritions
     resources :suppliers
-    
+    resources :time_frames
   end
 
 end
