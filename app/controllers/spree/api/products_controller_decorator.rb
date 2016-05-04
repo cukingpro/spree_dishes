@@ -27,7 +27,7 @@ Spree::Api::ProductsController.class_eval do
   end
 
   def products_on_date
-    @products = Spree::Product.dishes_on_date(Date.parse(params[:date]))
+    @products = Spree::Product.products_on_date(Date.parse(params[:date]))
     render "spree/api/products/index", status: 200
   end
 
